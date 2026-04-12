@@ -17,3 +17,4 @@ sumaDigitos:: Integer -> Integer
 sumaDigitos 0 = 0
 sumaDigitos n = digitoUnidades n + sumaDigitos (borrarUltimoDigito n)
 
+
