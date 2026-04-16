@@ -21,7 +21,7 @@ sumaDigitos n = digitoUnidades n + sumaDigitos (borrarUltimoDigito n)
 
 obtenerUltimoDigito:: Integer -> Integer
 obtenerUltimoDigito n = mod n 10
-
+					.
 compararDecimal::Integer->Integer->Integer
 compararDecimal n multiplicador  
     | n > multiplicador && n > multiplicador *10 = compararDecimal n (multiplicador *10)
