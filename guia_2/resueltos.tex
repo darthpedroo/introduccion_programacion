@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+
+
+\author{darthpedroo}
+\title{Introducción a la programación resueltos}
+\date{Segundo Cuatrimestre 2026}
+
+\begin{document}
+\maketitle
+
+\section{Práctica 1}
+
+\section{Práctica 2}
+
+\textbf{Ejercicio 1.} Escribir semiformalmente los siguientes predicados
+
+\begin{enumerate}
+\item{\textit{esPrimo}: que dado un número verifica si cumple las propiedades de ser un número primo.}
+\item{\textit{esPosicionValida}: que dado un entero i y una secuencia l, verifica si i es un índice válido para l.}
+\item{\textit{esMinimo}: que dado una secuencia de enteros l y un entero \textit{elem},verifica que \textit{elem} sea el mínimo.}
+\item{\textit{esMaximo}: que dada una secuencia de enteros \textit{l} y un entero \textit{elem}, verifica que \textit{elem} sea el máximo.}
+\end{enumerate}
+
+\textbf{Respuestas}
+
+\[
+\begin{array}{l}
+\mathrm{proc}\ \mathit{esMinimo}\,(\mathrm{in}\ l : \mathit{seq}\langle\mathbb{Z}\rangle,\ \mathrm{in}\ \mathit{elem} : \mathbb{Z}) : \mathrm{Bool}\ \{ \\
+\qquad \mathit{requiere}\ \{\mathrm{True}\} \\
+\qquad \mathit{asegura}\ \{\mathit{res} = \mathrm{true} \leftrightarrow (\mathit{elem} \in l \wedge (\forall x : \mathbb{Z})(x \in l \rightarrow \mathit{elem} \leq x))\} \\
+\}
+\end{array}
+\]
+
+\end{document}
