@@ -31,15 +31,137 @@ Ejercicio 25: Especificar e implementar las siguientes funciones, incluyendo su 
 
 a) absoluto: calcula el valor absoluto de un número entero
 
+
 problema absoluto ($n: \mathbb{Z}$) : $\mathbb{Z}$ \{
 
     requiere: \{True\}
 
     asegura: \{$res = \sqrt{n^2}$\}
+    \}
+
+b) maximoAbsoluto: devuelve el máximo entre el valor absoluto de dos números enteros
+
+
+problema maximoAbsoluto($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Z}$ \{
+
+    requiere: \{True\}
+
+    asegura: \{$res$ = n1 si absoluto(n1) >= absoluto(n2) \}
+    asegura: \{$res$ = n2 si absoluto(n2) > absoluto(n1) \}
+
+    \}
+
+c) maximo3: devuelve el máximo entre tres números enteros
+
+
+problema maximo3($n1: \mathbb{Z}, n2: \mathbb{Z}, n3: \mathbb{Z}$): $\mathbb{Z}$ \{
+
+    requiere: {True}
+
+
+    asegura: {$(res = x) \vee (res = y) \vee (res = z)$}
+    
+    
+    asegura: {$(res >= x) \wedge (res >= y) \wedge (res >= z)$}
 
 \}
 
 
 
-\end{document}
+d) algunoEsCero: dados dos números racionales, decide si alguno es igual a 0 (resolverlo con y sin pattern matching)
 
+
+
+¡PREGUNTAR SI ESTA MUY FORMAL!
+
+
+problema algunoEsCero($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Bool}$ \{
+
+
+    requiere : \{True\}
+
+
+    asegura: \{ res = $n1 = 0 \vee n2 = 0$ \}
+
+
+    \}
+
+
+e) ambosSonCero: dados dos números reales, decide si ambos son iguales a 0 (resolverlo con y sin pattern matching)
+
+
+problema ambosSonCero($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Bool}$ \{
+    requiere : \{True\}
+    asegura: \{ res = $n1 = 0 \wedge n2 = 0$ \}
+    \}
+
+
+f) enMismoIntervalo: dados dos números reales, indica si están relacionados por la relación de equivalencia en $\mathbb{R}$ son: (minus inf, 3] , (3,7] y (7,inf), o dicho de otra manera, si pertenecen al mismo intervalo
+
+problema esMismoIntervalo($n1: \mathbb{Z} n2: \mathbb{Z}$): $\mathbb{Bool}$ \{
+
+
+    requiere : \{True\}
+
+
+    asegura: \{res = True si $n1 \in (\infty, 3] \wedge n2 in (\infty, 3] $  \}
+
+    
+    asegura: \{res = True si $n1 \in (3, 7] \wedge n2 in (3, 7] $  \}
+
+
+    asegura: \{res = True si $n1 \in (7, \infty) \wedge n2 in (7, \infty) $  \}
+
+    
+    asegura: \{res = False si n1 ni n2 se encuentran en el mismo intervalo\}
+    
+\}
+
+
+
+g) sumaDistintos: que dados tres números naturales, calcule la suma sin sumar repetidos.
+
+
+problema sumaDistintos($x: \mathbb{R}, y: \mathbb{R}, z: \mathbb{R}$): $\mathbb{R}$ \{
+
+    requiere:\{True\}
+
+
+    asegura: \{si los 3 parámetros son distintos entonces res = x+y+z\}
+
+
+    asegura: \{si 2 parámetros son iguales entonces res = al que es distinto\}
+
+
+    asegura: \{si los 3 parámetros son iguales entonces res = 0\}
+
+\}
+
+
+
+i) digitoUnidades: dado un número entero, extrae su dígito de las unidades.
+
+problema digitoUnidades($x: \mathbb{Z}$): $\mathbb{Z}$ \{
+
+    requiere: {True}
+    asegura: {res = x % 10}
+    asegura: {res = es el digito de x correspondiente a las unidades}
+
+    ¿ambas son válidas?
+
+\}
+
+
+j) digitoDecenas: dado un número entero mayor a 9, extrae su dígito de las decenas
+
+problema digitoDecenas($x: \mathbb{Z}$): $\mathbb{Z}$) \{ 
+    
+
+    requiere: \{True\}
+
+
+    asegura: \{ res es el dígito de x correspondiente a las decenas \}
+
+\}
+
+\end{document}
