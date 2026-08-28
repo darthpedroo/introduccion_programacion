@@ -1,20 +1,13 @@
-module Ejercicio_2 where 
+parteEntera :: Float -> Integer
+parteEntera x
+  | x < 1     = 0
+  | otherwise = 1 + parteEntera (x - 1)
 
-{-
-Ejercicio 2. Implementar una funcion parteEntera :: Float ->Integer 
-segun la siguiente especificacion:
+{-- 
+básicamente lo que hago aca es fijarme en el caso base si es menor a 1, entonces sumo 0 de una.
 
-problema parteEntera (x: R) : Z {
-requiere: { x ≥0 }
-asegura: { resultado ≤x < resultado + 1 }
--}
+luego, si x no es menor a 1 , llamo recursivamente a parteEntera.  Esto me va sumando de A UN VALOR hasta que llegamos al caso base. 
 
-floor2:: Float -> Integer -> Integer
-floor2 n iterator | n >= fromInteger iterator && n < fromInteger iterator +1 = iterator
-    | otherwise = floor2 n (iterator +1)
+El problema es que si busco la parte entera de 
 
-parteEntera:: Float -> Integer
-parteEntera n = floor2 n 0
-
-
-
+--}
