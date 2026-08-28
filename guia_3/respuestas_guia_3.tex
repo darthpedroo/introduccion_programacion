@@ -15,48 +15,49 @@
 
 \section{Guia 3}
 
-\textbf{Respuestas} 
+\textbf{Respuestas}\newline
 
-Ejercicio 1.
+\textbf{Ejercicio 1.}\newline
 
 problema g (n: $\mathbb{Z}$) : $\mathbb{Z}$ \{
 
-    requiere: \{$n=8 \vee n = 16 \vee n = 131$\}
+    \qquad requiere: \{$n=8 \vee n = 16 \vee n = 131$\}
     
     asegura: \{$(n=8 \rightarrow res = 16) \wedge (n=16 \rightarrow res = 4) \wedge (n=131 \rightarrow res = 1)$\}
-\}
+\}\newline
 
 
-Ejercicio 25: Especificar e implementar las siguientes funciones, incluyendo su signatura.
+\textbf{Ejercicio 2}: Especificar e implementar las siguientes funciones, incluyendo su signatura.\newline
 
-a) absoluto: calcula el valor absoluto de un número entero
+
+a) absoluto: calcula el valor absoluto de un número entero\newline
 
 
 problema absoluto ($n: \mathbb{Z}$) : $\mathbb{Z}$ \{
 
-    requiere: \{True\}
+    \qquad requiere: \{True\}
 
     asegura: \{$res = \sqrt{n^2}$\}
-    \}
+    \}\newline
 
-b) maximoAbsoluto: devuelve el máximo entre el valor absoluto de dos números enteros
+b) maximoAbsoluto: devuelve el máximo entre el valor absoluto de dos números enteros\newline
 
 
 problema maximoAbsoluto($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Z}$ \{
 
-    requiere: \{True\}
+    \qquad requiere: \{True\}
 
-    asegura: \{$res$ = n1 si absoluto(n1) >= absoluto(n2) \}
-    asegura: \{$res$ = n2 si absoluto(n2) > absoluto(n1) \}
+    asegura: \{$res = n1 si absoluto(n1) >= absoluto(n2)$ \}
+    asegura: \{$res = n2 si absoluto(n2) > absoluto(n1)$ \}
 
-    \}
+    \}\newline
 
-c) maximo3: devuelve el máximo entre tres números enteros
+c) maximo3: devuelve el máximo entre tres números enteros\newline
 
 
 problema maximo3($n1: \mathbb{Z}, n2: \mathbb{Z}, n3: \mathbb{Z}$): $\mathbb{Z}$ \{
 
-    requiere: {True}
+    \qquad requiere: {True}
 
 
     asegura: {$(res = x) \vee (res = y) \vee (res = z)$}
@@ -64,44 +65,40 @@ problema maximo3($n1: \mathbb{Z}, n2: \mathbb{Z}, n3: \mathbb{Z}$): $\mathbb{Z}$
     
     asegura: {$(res >= x) \wedge (res >= y) \wedge (res >= z)$}
 
-\}
+\}\newline
 
 
 
-d) algunoEsCero: dados dos números racionales, decide si alguno es igual a 0 (resolverlo con y sin pattern matching)
-
-
-
-¡PREGUNTAR SI ESTA MUY FORMAL!
+d) algunoEsCero: dados dos números racionales, decide si alguno es igual a 0 (resolverlo con y sin pattern matching)\newline
 
 
 problema algunoEsCero($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Bool}$ \{
 
 
-    requiere : \{True\}
+    \qquad requiere : \{True\}
 
 
     asegura: \{ res = $n1 = 0 \vee n2 = 0$ \}
 
 
-    \}
+    \}\newline
 
 
-e) ambosSonCero: dados dos números reales, decide si ambos son iguales a 0 (resolverlo con y sin pattern matching)
+e) ambosSonCero: dados dos números reales, decide si ambos son iguales a 0 (resolverlo con y sin pattern matching)\newline
 
 
 problema ambosSonCero($n1: \mathbb{Z}, n2: \mathbb{Z}$) : $\mathbb{Bool}$ \{
-    requiere : \{True\}
+    \qquad requiere : \{True\}
     asegura: \{ res = $n1 = 0 \wedge n2 = 0$ \}
     \}
 
 
-f) enMismoIntervalo: dados dos números reales, indica si están relacionados por la relación de equivalencia en $\mathbb{R}$ son: (minus inf, 3] , (3,7] y (7,inf), o dicho de otra manera, si pertenecen al mismo intervalo
+f) enMismoIntervalo: dados dos números reales, indica si están relacionados por la relación de equivalencia en $\mathbb{R}$ son: (minus inf, 3] , (3,7] y (7,inf), o dicho de otra manera, si pertenecen al mismo intervalo\newline
 
 problema esMismoIntervalo($n1: \mathbb{Z} n2: \mathbb{Z}$): $\mathbb{Bool}$ \{
 
 
-    requiere : \{True\}
+    \qquad requiere : \{True\}
 
 
     asegura: \{res = True si $n1 \in (\infty, 3] \wedge n2 in (\infty, 3] $  \}
@@ -115,44 +112,42 @@ problema esMismoIntervalo($n1: \mathbb{Z} n2: \mathbb{Z}$): $\mathbb{Bool}$ \{
     
     asegura: \{res = False si n1 ni n2 se encuentran en el mismo intervalo\}
     
-\}
+\}\newline
 
 
 
-g) sumaDistintos: que dados tres números naturales, calcule la suma sin sumar repetidos.
+g) sumaDistintos: que dados tres números naturales, calcule la suma sin sumar repetidos.\newline
 
 
 problema sumaDistintos($x: \mathbb{R}, y: \mathbb{R}, z: \mathbb{R}$): $\mathbb{R}$ \{
 
-    requiere:\{True\}
+    \qquad requiere:\{True\}
 
 
-    asegura: \{si los 3 parámetros son distintos entonces res = x+y+z\}
+    \qquad asegura: \{si los 3 parámetros son distintos entonces res = x+y+z\}
 
 
-    asegura: \{si 2 parámetros son iguales entonces res = al que es distinto\}
+    \qquad asegura: \{si 2 parámetros son iguales entonces res = al que es distinto\}
 
 
-    asegura: \{si los 3 parámetros son iguales entonces res = 0\}
+    \qquad asegura: \{si los 3 parámetros son iguales entonces res = 0\}
 
-\}
+\}\newline
 
 
 
-i) digitoUnidades: dado un número entero, extrae su dígito de las unidades.
+i) digitoUnidades: dado un número entero, extrae su dígito de las unidades.\newline
 
 problema digitoUnidades($x: \mathbb{Z}$): $\mathbb{Z}$ \{
 
-    requiere: {True}
-    asegura: {res = x % 10}
-    asegura: {res = es el digito de x correspondiente a las unidades}
-
-    ¿ambas son válidas?
-
-\}
+    \qquad requiere: \{True\}
+    \qquad asegura: \{res = es el digito de x correspondiente a las unidades\}
 
 
-j) digitoDecenas: dado un número entero mayor a 9, extrae su dígito de las decenas
+\}\newline
+
+
+j) digitoDecenas: dado un número entero mayor a 9, extrae su dígito de las decenas\newline
 
 problema digitoDecenas($x: \mathbb{Z}$): $\mathbb{Z}$) \{ 
     
@@ -162,6 +157,114 @@ problema digitoDecenas($x: \mathbb{Z}$): $\mathbb{Z}$) \{
 
     asegura: \{ res es el dígito de x correspondiente a las decenas \}
 
-\}
+\}\newline
+
+\textbf{Ejercicio 4}: Especificar e implementar las siguientes funciones utilizando tuplas para representar pares y ternas de números.\newline
+
+a) \textbf{productoInterno}: calcula el producto interno entre dos tuplas de $\mathbf{R} x \mathbf{R}$
+
+problema productoInterno($a:\mathbf{R}  x  \mathbf{R} b:\mathbf{R}  x  \mathbf{R}$): ${R}$ \{
+
+
+    requiere:{True}
+
+
+    asegura: {$res = a[0]*b[0] + a[1]*b[1]$}
+
+\} \newline
+
+b) \textbf{esParMenor}: dadas dos tuplas de $\mathbf{R}$ x $\mathbf{R}$ , decide si cada coordenada de la primera tupla es menor a la coordenada correspondiente de la segunda tupla. \newline
+
+problema esParMenor($a: \mathbf{R} x \mathbf{R} b: \mathbf{R} x \mathbf{R}$): Bool \{
+
+
+    requiere: {True}
+
+
+    asegura: {$res = (a[0]<= b[0]) \wedge (a[1]<=b[1])$}
+
+\} \newline
+
+
+c) \textbf{distancia}: calcula la distancia euclídea entre dos puntos de $\mathbf{R^2}$ \newline
+
+problema distancia($a: \mathbf{R} x \mathbf{R} b: \mathbf{R} x \mathbf{R}$): $\mathbf{R}$ \{
+
+    requiere:\{True\}
+
+    
+    asegura:\{$res = \sqrt{(b[0]-a[0])^2+(b[1]-a[1])^2}$\}
+
+
+\}\newline
+
+
+d) \textbf{sumaTerna}: dada una terna de enteros, calcula la suma de sus tres elementos \newline
+
+problema sumaTerna($a: \mathbf{R}x\mathbf{R}x\mathbf{R}$): $\mathbf{R}$ \{
+    requiere:\{True\}
+
+    asegura:\{res=a[0]+a[1]+a[2]\}
+
+\} \newline
+
+e) \textbf{sumarSoloMúltiplos}: dada una terna de números enteros y un natural, calcula la suma de los elementos de la terna que son múltiplos del número natural.\newline
+
+problema sumarSoloMúltiplos($a:\mathbf{Z}x\mathbf{Z}x\mathbf{Z}, n:\mathbf{Z}$): $\mathbf{Z}$\{
+
+
+    requiere: \{n >0\}
+    asegura: \{si los tres elementos de la terna son multiplos del natural, res = a[0]+a[1]+a[2] \}
+    asegura: \{si un elemento de la terna no es multiplo del natural, res = la suma de los elementos que si son multiplos del natural \}
+    asegura:\{si dos elementos de la terna no son multiplos del natural, res = el valor del elemento que sí es multiplo del natural\}
+    asegura: \{si ningun elemento de la terna es múltiplo del natural, res = 0\}
+
+\}\newline
+
+f) \textbf{posPrimerPar}: dada una terna de enteros, devuelve la posición del primer número par si es que hay alguno, o devuelve 4 si son todos impares.\newline
+
+PREGUNTAR: ESTÁ BIEN O ES MUY REPETITIVA?
+
+problema posPrimerPar($a: \mathbf{Z}x\mathbf{Z}x\mathbf{Z}$): $\mathbf{Z}$ \{
+
+
+    requiere: \{True\}
+
+
+    asegura: \{$res= 0 \vee res =1 \vee res = 2 \vee res =4$\}
+    
+    
+    asegura: \{Si alguno de los elementos es par, entonces el resultado es la posición del elemento que contenga al primer número par\}
+    
+    
+    asegura: \{Si ninguno de los elementos de la terna es par, entonces res = 4\}
+
+\} \newline
+
+g) \textbf{crearPar} a partir de dos componentes, crea un par con esos valores. Debe funcionar para elementos de cualquier tipo \newline
+
+problema crearPar($a: \mathbf{T} b:\mathbf{T}$): $\mathbf{T} x \mathbf{T}$ \{
+
+    requiere: \{True\}
+
+
+    asegura: \{$(res[0]=a) \wedge (res[1]=b)$\}
+
+\} \newline
+
+
+h) \textbf{invertir} invierte los elementos del par pasado como parámetro. Debe funcionar para elementos de cualquier tipo. \newline
+
+problema invertir($x: \mathbf{T}x\mathbf{T}$): $\mathbf{T}x\mathbf{T}$ \{
+
+
+    \qquad requiere: {True}
+
+    \qquad asegura: {$(res[0] = x[1]) \wedge (res[1] = x[0]) $}
+
+\}\newline
 
 \end{document}
+
+
+
