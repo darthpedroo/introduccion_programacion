@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathtools}
 
 \begin{document}
 \section{Copy paste útiles}
@@ -11,6 +12,9 @@
 \item $\wedge$
 \item $\vee$
 \item $\rightarrow$
+\item $x \equiv 0 \mod{y}$
+\item $\sum_{i=1}^{n} a_i$
+
 \end{enumerate}
 
 \section{Guia 4}
@@ -19,8 +23,28 @@
 
 \textbf{Ejercicio 1.}\newline
 
+\textbf{Ejercicio 2.}\newline
 
+\textbf{Ejercicio 3.}: Especificar e implementar la función esDivisible :: Integer ->Integer -> Bool que dados dos números naturales determinar si el primero es divisible por el segundo. No esta permitido utilizar las funciones mod ni div \newline
 
+problema esDivisible($x: \mathbf{Z}, y: \mathbf{Z}$): Bool \{
+
+    requiere: \{$x>0 \wedge y>0$\}
+    
+    asegura: \{$x \equiv 0 \mod{y}$\}
+    
+\} \newline
+
+\textbf{Ejercicio 4.} Especificar e implementar la función sumaImpares::Integer->Integer que dado $n \in \mathbf{N}$ sume los primeros n números impares. Por ejemplo: sumaImpares 3 -> 1+3+5 = 9 \newline
+
+problema sumaImpares($x: \mathbf{Z}$): $\mathbf{Z}$ \{
+    
+    requiere: \{$x>0$\}
+
+    asegura: \{$res = \sum_{i=1}^{x} (2*n-1)$\}
+\}
+
+\textbf{Ejercicio 7}
 \end{document}
 
 
