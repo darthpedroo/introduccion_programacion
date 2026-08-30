@@ -2,8 +2,22 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage[most]{tcolorbox}
 
 \begin{document}
+
+\newtcolorbox{alerta}[1][]{
+  colback=red!5,           % fondo rosado suave
+  colframe=red!75!black,   % borde rojo
+  coltitle=white,
+  fonttitle=\bfseries,
+  boxrule=1pt,
+  arc=2mm,
+  left=3mm, right=3mm, top=2mm, bottom=2mm,
+  title=Revisar,
+  #1
+}
+
 \section{Copy paste útiles}
 
 \begin{enumerate}
@@ -25,7 +39,7 @@
 
 \textbf{Ejercicio 2.}\newline
 
-\textbf{Ejercicio 3.}: Especificar e implementar la función esDivisible :: Integer ->Integer -> Bool que dados dos números naturales determinar si el primero es divisible por el segundo. No esta permitido utilizar las funciones mod ni div \newline
+\textbf{Ejercicio 3.}: Especificar e implementar la función esDivisible :: Integer $->$ Integer $->$ Bool que dados dos números naturales determinar si el primero es divisible por el segundo. No esta permitido utilizar las funciones mod ni div \newline
 
 problema esDivisible($x: \mathbf{Z}, y: \mathbf{Z}$): Bool \{
 
@@ -35,16 +49,81 @@ problema esDivisible($x: \mathbf{Z}, y: \mathbf{Z}$): Bool \{
     
 \} \newline
 
-\textbf{Ejercicio 4.} Especificar e implementar la función sumaImpares::Integer->Integer que dado $n \in \mathbf{N}$ sume los primeros n números impares. Por ejemplo: sumaImpares 3 -> 1+3+5 = 9 \newline
+\textbf{Ejercicio 4.} Especificar e implementar la función sumaImpares::Integer$->$Integer que dado $n \in \mathbf{N}$ sume los primeros n números impares. Por ejemplo: sumaImpares 3 -> 1+3+5 = 9 \newline
 
 problema sumaImpares($x: \mathbf{Z}$): $\mathbf{Z}$ \{
     
     requiere: \{$x>0$\}
 
     asegura: \{$res = \sum_{i=1}^{x} (2*n-1)$\}
+\} \newline
+
+\textbf{Ejercicio 8} Especificar e implementar la función sumaDigitos :: Integer $->$Integer que calcula la suma de dígitos de
+un número natural. Para esta función pueden utilizar div y mod. \newline
+
+problema sumaDigitos($a:\mathbf{Z}$): $\mathbf{Z}$ \{
+    
+    requiere: \{$a > 0$\}
+
+
+    asegura: \{$res = \sum_{i=1}^{cantDigitos(a)} iesimoDigito(a,1)$\}
+    
 \}
 
-\textbf{Ejercicio 7}
+\textbf{Ejercicio 9} Especificar e implementar una función esCapicua :: Integer $->$Bool que dado n pertenece N $>= $ 0 determina si n es\newline
+
+\begin{alerta}
+¡PREGUNTAR SI ESTÁ BIEN ESTA ESPECIFICACIÓN!
+\end{alerta}
+
+problema esCapicua($a:\mathbf{Z}$):$\mathbf{Bool}$ \{
+
+
+    requiere: \{$a>=0$\}
+
+    asegura: \{res= True <-> el numero es capicua \}
+
+    \} \newline
+
+\textbf{Ejercicio 11.}:
+
+
+a) Especificar e implementar una función eAprox :: Integer ->Float que aproxime el valor del número e
+a partir de la siguiente sumatoria
+
+
+b) Definir la constante e :: Float como la aproximación de e a partir de los primeros 10 términos de la serie anterior.
+¡Atención! A veces ciertas funciones esperan un Float y nosotros tenemos un Int. Para estos casos podemos utilizar la
+función fromIntegral :: Int ->Float definida en el Preludio de Haskell \newline 
+
+
+problema eAprox($a:\mathbf{Z}$) -> $\mathbf{R}$ \{
+    
+
+    requiere\{$a>0$\}
+
+    asegura = {res = $\sum_{i=1}^{n}  1 \div i!$}
+
+\}\newline
+
+\begin{alerta}
+¡PREGUNTAR SI ESTÁ BIEN ESTA ESPECIFICACIÓN (Ejercicio 12)
+\end{alerta}
+
+\textbf{Ejercicio 12.}
+
+problema raizDe2Aprox ($n: \mathbf{Z}$) -> $\mathbf{R}$ \{
+
+    requiere:\{$a>0$\}
+
+    
+    asegura: \{res = an -1 \} 
+
+    (aclaración: se supone que an ya esta definida)
+
+
+\}
+
 \end{document}
 
 
