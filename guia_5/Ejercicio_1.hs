@@ -1,3 +1,5 @@
+module Ejercicio_1 where
+
 longitud :: (Eq a) => [a] -> Integer
 longitud xs 
     | xs == [] = 0
@@ -14,6 +16,7 @@ principio (x:xs) -- x es el primer elemento, xs es el resto de la lista
     | otherwise = x:(principio (xs))
 
 reverso:: (Eq t) => [t] -> [t]
+reverso [] = []
 reverso (x:xs)
     | longitud (x:xs) == 1 = [x]
     | otherwise = ultimo xs : reverso (x: principio xs)

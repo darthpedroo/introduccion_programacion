@@ -1,0 +1,27 @@
+cradle:
+  multi:
+    - path: "./guia_3/old"
+      config:
+        cradle:
+          direct:
+            arguments: ["-iguia_3/old"]
+    - path: "./guia_3"
+      config:
+        cradle:
+          direct:
+            arguments: ["-iguia_3"]
+    - path: "./guia_4/old"
+      config:
+        cradle:
+          direct:
+            arguments: ["-iguia_4/old"]
+    - path: "./guia_4"
+      config:
+        cradle:
+          direct:
+            arguments: ["-iguia_4"]
+    - path: "./guia_5"
+      config:
+        cradle:
+          direct:
+            arguments: ["-iguia_5"]
