@@ -1,4 +1,3 @@
--- TestsEjercicio2.hs
 import Test.HUnit ( (~:), (~?=), runTestTTAndExit, Test(TestList) )
 import Ejercicio_3 (sumatoria, productoria,maximo,sumarN,pares, minimo, ordenar,multiplosDeN)  
 import Test.HUnit (Test (TestList))

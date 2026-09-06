@@ -1,4 +1,3 @@
--- TestsEjercicio2.hs
 import Test.HUnit ( (~:), (~?=), runTestTTAndExit, Test(TestList) )
 import Ejercicio_2 (quitarTodos, eliminarRepetidos, mismosElementos,capicua) 
 import Test.HUnit (Test (TestList))
