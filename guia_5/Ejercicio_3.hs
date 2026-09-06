@@ -1,6 +1,5 @@
 module Ejercicio_3 where
 import Ejercicio_1 (ultimo)
-import Data.Bits (Bits(xor))
 import Ejercicio_2 (quitar)
 
 sumatoria::[Integer]->Integer
