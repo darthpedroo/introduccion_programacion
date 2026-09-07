@@ -37,14 +37,19 @@ sumaAcumulada :: (Num t , Eq t) => [t] -> [t]
 sumaAcumulada xs = reverso (sumaAcumuladaAux xs)
 
 descomponerEnPrimosLista :: [Integer] -> [[Integer]]
-descomponerEnPrimosLista [] = []
+descomponerEnPrimosLista (x:[]) = [descomponerEnPrimos x]
+descomponerEnPrimosLista (x:xs) = descomponerEnPrimos x : descomponerEnPrimosLista xs 
 
 descomponerEnPrimos :: Integer -> [Integer]
-descomponerEnPrimos x = []
+descomponerEnPrimos x = descomponerEnPrimosAux x 2
 
+descomponerEnPrimosAux :: Integer -> Integer -> [Integer]
+descomponerEnPrimosAux 1 n = []
+descomponerEnPrimosAux x n
+        | mod x n == 0 = n : descomponerEnPrimosAux (div x n) (2)
+        | otherwise = descomponerEnPrimosAux x (n+1)
 
 {--
-
 Inspiración:
 
 - https://www.youtube.com/watch?v=46E0-XJuAXs
@@ -55,7 +60,7 @@ ALGORITMO
 135
 
 135 / 2 == 0 ? NO
-135 / 3 == 0 ? SI
+135 / 3 == 0 ? SI 
 45 / 3 == 0 ? SI
 15 / 3 == 0 ? SI
 5 / 3 == 0 ? NO
