@@ -129,3 +129,34 @@ masRepetidoAux tablero (x:xs)
 
 masRepetido::Tablero->Integer
 masRepetido tablero = masRepetidoAux tablero (elementosUnicosTablero tablero)
+
+-- EJERCICIO 3
+
+tableroGoon = [[13,12,6,4],[1,1,32,25],[9,2,14,7],[7,3,5,16],[27,2,8,18]]
+
+caminoGoon = [(2,1),(2,2),(3,2),(4,2),(4,3)]
+
+obtenerFila::Tablero->Integer->Fila
+obtenerFila (fila:tablero) numeroFila 
+    | numeroFila == 1 = fila
+    | otherwise = obtenerFila (tablero) (numeroFila -1)
+
+obtenerElementoEnColumna::Fila->Integer->Integer
+obtenerElementoEnColumna (x:xs) elemento
+    | elemento == 1 = x
+    | otherwise = obtenerElementoEnColumna xs (elemento -1)
+
+valoresDeCamino::Tablero->Camino->Fila
+valoresDeCamino (tablero) ((fila,columna):[]) = [(obtenerElementoEnColumna (obtenerFila tablero fila) columna)]
+valoresDeCamino (tablero) ((fila,columna):camino) =(obtenerElementoEnColumna (obtenerFila tablero fila) columna) : (valoresDeCamino (tablero) camino)
+
+-- EJERCICIO 4
+
+fibonacci :: Integer -> Integer
+fibonacci 1 = 1
+fibonacci 0 = 0 
+fibonacci n = fibonacci(n-1) + fibonacci(n-2)
+
+esCaminoFibo :: [Integer] -> Integer -> Bool
+esCaminoFibo [x] n = (x == fibonacci n)
+esCaminoFibo (x:xs) n = (x == fibonacci n) && (esCaminoFibo xs (n + 1))

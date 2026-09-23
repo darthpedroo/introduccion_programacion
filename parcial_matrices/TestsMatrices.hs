@@ -1,5 +1,5 @@
 import Test.HUnit ( (~:), (~?=), runTestTTAndExit, Test(TestList) )
-import Parcial_Matrices (maximo)
+import Parcial_Matrices (maximo,valoresDeCamino,esCaminoFibo)
 
 testMaximo :: Test
 testMaximo = TestList
@@ -19,9 +19,37 @@ testMaximo = TestList
   , "números grandes"              ~: maximo [[1000,999],[1001,998]]        ~?= 1001
   ]
 
+testValoresDeCamino :: Test
+testValoresDeCamino = TestList
+  [ "una sola celda"             ~: valoresDeCamino [[5]] [(1,1)]                 ~?= [5]
+  , "recorre la primera fila"    ~: valoresDeCamino t3 [(1,1),(1,2),(1,3)]         ~?= [1,2,3]
+  , "recorre la primera columna" ~: valoresDeCamino t3 [(1,1),(2,1),(3,1)]         ~?= [1,4,7]
+  , "zigzag hasta la esquina"    ~: valoresDeCamino t3 [(1,1),(1,2),(2,2),(2,3),(3,3)] ~?= [1,2,5,6,9]
+  , "no empieza en (1,1)"        ~: valoresDeCamino t3 [(2,2),(3,2)]               ~?= [5,8]
+  , "una posición del medio"     ~: valoresDeCamino t3 [(2,3)]                     ~?= [6]
+  , "tablero no cuadrado"        ~: valoresDeCamino [[1,2],[3,4],[5,6]] [(1,2),(2,2),(3,2)] ~?= [2,4,6]
+  , "valores repetidos"          ~: valoresDeCamino [[7,7],[7,7]] [(1,1),(1,2),(2,2)] ~?= [7,7,7]
+  ]
+  where
+    t3 = [[1,2,3],[4,5,6],[7,8,9]]
+  
+testEsCaminoFibo :: Test
+testEsCaminoFibo = TestList
+  [ "ejemplo del enunciado"      ~: esCaminoFibo [1,1,2,3,5] 1 ~?= True
+  , "empieza en i = 3"           ~: esCaminoFibo [2,3,5] 3     ~?= True
+  , "un solo elemento correcto"  ~: esCaminoFibo [3] 4         ~?= True
+  , "un solo elemento incorrecto"~: esCaminoFibo [4] 4         ~?= False
+  , "índice inicial equivocado"  ~: esCaminoFibo [2,3,5] 1     ~?= False
+  , "falla en el medio"          ~: esCaminoFibo [1,2,3] 1     ~?= False
+  , "falla en el último"         ~: esCaminoFibo [5,8,14] 5    ~?= False
+  , "i = 0 siempre da False"     ~: esCaminoFibo [1,1] 0       ~?= False
+  ]
+
 todosLosTests :: Test
 todosLosTests = TestList
-  [ "maximo" ~: testMaximo
+  [ "maximo"          ~: testMaximo,
+  "valoresDeCamino" ~: testValoresDeCamino,
+  "caminoFibo" ~: testEsCaminoFibo
   ]
 
 main :: IO ()

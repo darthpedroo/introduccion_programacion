@@ -1,4 +1,3 @@
-
 fibonacci :: Integer -> Integer
 fibonacci 1 = 1
 fibonacci 0 = 0 
