@@ -160,3 +160,4 @@ fibonacci n = fibonacci(n-1) + fibonacci(n-2)
 esCaminoFibo :: [Integer] -> Integer -> Bool
 esCaminoFibo [x] n = (x == fibonacci n)
 esCaminoFibo (x:xs) n = (x == fibonacci n) && (esCaminoFibo xs (n + 1))
+
