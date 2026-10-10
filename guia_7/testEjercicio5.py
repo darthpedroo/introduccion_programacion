@@ -1,20 +1,4 @@
-"""
-Test suite - Guía Práctica 7, Ejercicio 5 (pertenece_a_cada_uno, versiones 1, 2 y 3)
 
-Uso:
-    python -m unittest test_ejercicio5.py -v
-
-Ajustar la línea de import con el nombre del archivo donde están tus funciones.
-
-Firmas que se asumen:
-    pertenece_a_cada_uno_version_1(s: list[list[int]], e: int, res: list[bool]) -> None
-    pertenece_a_cada_uno_version_2(s: list[list[int]], e: int, res: list[bool]) -> None
-    pertenece_a_cada_uno_version_3(s: list[list[int]], e: int) -> list[bool]
-
-En las versiones 1 y 2, res es un parámetro "out": la función escribe el resultado
-en la lista que recibe. Como es "out", su valor inicial no importa, así que los tests
-también la llaman con listas que ya tienen elementos.
-"""
 import copy
 import unittest
 
@@ -64,7 +48,6 @@ class TestVersion1(unittest.TestCase):
         self._probar(RES_INICIALES["vacia"])
 
     def test_res_con_basura_mas_corta(self):
-        # res es "out": su valor inicial no importa, la función no puede asumir que viene vacía
         self._probar(RES_INICIALES["mas_corta_con_basura"])
 
     def test_res_con_basura_mas_larga(self):
@@ -72,8 +55,6 @@ class TestVersion1(unittest.TestCase):
         self._probar(RES_INICIALES["mas_larga_con_basura"])
 
     def test_modifica_la_lista_recibida(self):
-        # Atrapa a quien hace res = [...] adentro: eso crea una lista nueva
-        # y la que pasó quien llama a la función queda igual
         res: list[bool] = []
         sol.pertenece_a_cada_uno_version_1([[1], [2]], 1, res)
         self.assertEqual(res[:2], [True, False])
@@ -108,7 +89,6 @@ class TestVersion2(unittest.TestCase):
         self._probar(RES_INICIALES["mas_corta_con_basura"])
 
     def test_res_con_basura_mas_larga(self):
-        # Diferencia con la versión 1: acá no pueden sobrar elementos
         self._probar(RES_INICIALES["mas_larga_con_basura"])
 
     def test_modifica_la_lista_recibida(self):
@@ -137,7 +117,6 @@ class TestVersion3(unittest.TestCase):
                 self.assertEqual(sol.pertenece_a_cada_uno_version_3(s, e), esperado(s, e))
 
     def test_devuelve_lista_nueva_cada_vez(self):
-        # Atrapa a quien usa una lista global o compartida entre llamadas
         a = sol.pertenece_a_cada_uno_version_3([[1]], 1)
         b = sol.pertenece_a_cada_uno_version_3([[2], [3]], 1)
         self.assertEqual(a, [True])

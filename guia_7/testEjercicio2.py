@@ -1,16 +1,9 @@
-"""
-Test suite - Guía Práctica 7, Ejercicio 2 (ítems 3 a 6)
 
-Uso:
-    python -m unittest test_ejercicio2.py -v
-
-Ajustar la línea de import con el nombre del archivo donde están tus funciones.
-"""
 import unittest
 
-import ejercicio_2 as sol  # <- cambiar "guia7" por el nombre de tu archivo (sin .py)
+import ejercicio_2 as sol  
 
-# Caracter con el que reemplaza_vocales sustituye cada vocal (según la especificación: '_')
+
 REEMPLAZO: str = "_"
 
 
@@ -32,11 +25,9 @@ class TestSinVocales(unittest.TestCase):
         self.assertEqual(sol.sin_vocales("arbole"), "rbl")
 
     def test_vocales_consecutivas(self):
-        # Atrapa a quien recorre por índice y se saltea un caracter al borrar
         self.assertEqual(sol.sin_vocales("buuueno"), "bn")
 
     def test_conserva_espacios(self):
-        # No se agregan espacios, pero los que ya estaban se conservan
         self.assertEqual(sol.sin_vocales("hola mundo"), "hl mnd")
 
     def test_conserva_orden(self):
@@ -136,8 +127,6 @@ class TestEliminarRepetidos(unittest.TestCase):
                 if i != j:
                     self.assertNotEqual(res[i], res[j], f"'{res[i]}' aparece repetido")
         for c in res:
-            # Implícito en la especificación: |res| <= |s| junto con lo anterior
-            # obliga a que res tenga exactamente los caracteres de s
             self.assertIn(c, s, f"'{c}' no estaba en s")
 
     def test_vacia(self):

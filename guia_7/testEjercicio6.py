@@ -1,20 +1,4 @@
-"""
-Test suite - Guía Práctica 7, Ejercicio 6 (ítems 1 a 5: matrices)
 
-Uso:
-    python -m unittest test_ejercicio6.py -v
-
-Ajustar la línea de import con el nombre del archivo donde están tus funciones.
-
-Firmas que se asumen:
-    es_matriz(s: list[list[int]]) -> bool
-    filas_ordenadas(m: list[list[int]], res: list[bool]) -> None      (res es "out")
-    columna(m: list[list[int]], c: int) -> list[int]
-    columnas_ordenadas(m: list[list[int]]) -> list[bool]
-    transponer(m: list[list[int]]) -> list[list[int]]
-
-ordenados() es la del ejercicio 1: ESTRICTA (s[i] < s[i+1]).
-"""
 import copy
 import unittest
 
@@ -27,7 +11,6 @@ def ordenados_ref(s: list[int]) -> bool:
 
 # ---------------------------------------------------------------- 6.1
 class TestEsMatriz(unittest.TestCase):
-    # --- verdaderos
     def test_rectangular_mas_columnas(self):
         self.assertTrue(sol.es_matriz([[1, 2, 3], [4, 5, 6]]))
 
@@ -43,7 +26,6 @@ class TestEsMatriz(unittest.TestCase):
     def test_una_fila(self):
         self.assertTrue(sol.es_matriz([[1, 2, 3, 4]]))
 
-    # --- falsos
     def test_sin_filas(self):
         self.assertFalse(sol.es_matriz([]))
 
@@ -105,8 +87,6 @@ class TestFilasOrdenadas(unittest.TestCase):
         self._probar([False, True, False, True])
 
     def test_un_resultado_por_fila(self):
-        # La especificación no fija |res| (es un descuido: |res| = 0 la cumpliría).
-        # Este test sigue la intención: un Bool por fila.
         for m in self.CASOS:
             with self.subTest(m=m):
                 res: list[bool] = []
@@ -178,12 +158,9 @@ class TestColumnasOrdenadas(unittest.TestCase):
         m = [[1, 9, 5],
              [2, 3, 5],
              [3, 1, 6]]
-        # col 0: 1,2,3 sí | col 1: 9,3,1 no | col 2: 5,5,6 no (estricto)
         self.assertEqual(sol.columnas_ordenadas(m), [True, False, False])
 
     def test_largo_es_cantidad_de_columnas(self):
-        # Matriz 2x3: el resultado tiene 3 elementos, no 2
-        # (atrapa a quien recorre las filas en vez de las columnas)
         m = [[1, 2, 3],
              [4, 0, 6]]
         self.assertEqual(sol.columnas_ordenadas(m), [True, False, True])
@@ -195,14 +172,12 @@ class TestColumnasOrdenadas(unittest.TestCase):
         self.assertEqual(sol.columnas_ordenadas(m), [True, False])
 
     def test_una_fila(self):
-        # Cada columna tiene un solo elemento: está ordenada
         self.assertEqual(sol.columnas_ordenadas([[5, 1, 3]]), [True, True, True])
 
     def test_una_columna(self):
         self.assertEqual(sol.columnas_ordenadas([[1], [2], [0]]), [False])
 
     def test_no_confunde_filas_con_columnas(self):
-        # Filas ordenadas pero columnas no
         m = [[4, 5, 6],
              [1, 2, 3]]
         self.assertEqual(sol.columnas_ordenadas(m), [False, False, False])
@@ -219,12 +194,10 @@ class TestTransponer(unittest.TestCase):
         self.assertEqual(sol.transponer([[1, 2], [3, 4]]), [[1, 3], [2, 4]])
 
     def test_mas_columnas_que_filas(self):
-        # 2x3 -> 3x2 (atrapa a quien recorre range(len(m)) en vez de range(len(m[0])))
         self.assertEqual(sol.transponer([[1, 2, 3], [4, 5, 6]]),
                          [[1, 4], [2, 5], [3, 6]])
 
     def test_mas_filas_que_columnas(self):
-        # 3x2 -> 2x3
         self.assertEqual(sol.transponer([[1, 4], [2, 5], [3, 6]]),
                          [[1, 2, 3], [4, 5, 6]])
 
@@ -269,7 +242,6 @@ class TestTransponer(unittest.TestCase):
         self.assertEqual(m, [[1, 2, 3], [4, 5, 6]])
 
     def test_resultado_independiente_de_m(self):
-        # Modificar la transpuesta no tiene que cambiar la original
         m = [[1], [2]]
         mt = sol.transponer(m)
         mt[0][0] = 99

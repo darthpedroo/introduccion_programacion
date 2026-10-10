@@ -1,15 +1,7 @@
-"""
-Test suite - Guía Práctica 7, Ejercicios 3 (resultadoMateria) y 4 (saldoActual)
 
-Uso:
-    python -m unittest test_ejercicio3_4.py -v
-
-Ajustar la línea de import con el nombre del archivo donde están tus funciones.
-"""
 import unittest
 
-import ejercicio_4 as sol  # <- cambiar "guia7" por el nombre de tu archivo (sin .py)
-
+import ejercicio_4 as sol  
 # ---------------------------------------------------------------- Ejercicio 4
 class TestSaldoActual(unittest.TestCase):
     def test_sin_movimientos(self):

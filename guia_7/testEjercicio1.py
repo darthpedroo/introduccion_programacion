@@ -63,7 +63,6 @@ class TestMaximo(unittest.TestCase):
         self.assertEqual(sol.maximo([1, 2, 9]), 9)
  
     def test_todos_negativos(self):
-        # Atrapa la implementación que arranca con maximo = 0
         self.assertEqual(sol.maximo([-3, -1, -7]), -1)
  
     def test_repetidos(self):
@@ -83,7 +82,6 @@ class TestMinimo(unittest.TestCase):
         self.assertEqual(sol.minimo([9, 2, 1]), 1)
  
     def test_todos_positivos(self):
-        # Atrapa la implementación que arranca con minimo = 0
         self.assertEqual(sol.minimo([3, 5, 7]), 3)
  
     def test_negativos(self):
@@ -100,7 +98,6 @@ class TestOrdenados(unittest.TestCase):
         self.assertTrue(sol.ordenados([1, 2, 3, 10]))
  
     def test_con_iguales_consecutivos(self):
-        # La especificación usa s[i] < s[i+1] (estricto)
         self.assertFalse(sol.ordenados([1, 2, 2, 3]))
  
     def test_desordenado_al_final(self):
@@ -153,7 +150,6 @@ class TestPosMinimo(unittest.TestCase):
         self.assertEqual(sol.pos_minimo([5, 1, 9]), 1)
  
     def test_repetido_devuelve_ultima_aparicion(self):
-        # Ojo: a diferencia de pos_maximo, acá es la ÚLTIMA aparición
         self.assertEqual(sol.pos_minimo([3, 1, 5, 1, 4]), 3)
  
     def test_todos_iguales(self):
@@ -182,8 +178,6 @@ class TestLongMayorASiete(unittest.TestCase):
         self.assertTrue(sol.long_mayorASiete(["sol", "murcielago", "mar"]))
  
     def test_larga_al_final(self):
-        # La cota 0 <= i < |s|-1 de la especificación deja afuera el último elemento,
-        # pero el enunciado dice "si alguna palabra". Este test sigue al enunciado.
         self.assertTrue(sol.long_mayorASiete(["sol", "mar", "murcielago"]))
  
     def test_palabras_vacias(self):
@@ -213,7 +207,6 @@ class TestEsPalindroma(unittest.TestCase):
         self.assertFalse(sol.es_palindroma("abcbx"))
  
     def test_mayusculas_cuentan(self):
-        # Se compara caracter a caracter: 'A' != 'a'
         self.assertFalse(sol.es_palindroma("Ana"))
 
 class TestIgualesConsecutivos(unittest.TestCase):
@@ -233,8 +226,6 @@ class TestIgualesConsecutivos(unittest.TestCase):
         self.assertTrue(sol.iguales_consecutivos([1, 7, 7, 7, 3]))
  
     def test_al_final(self):
-        # "en cualquier posición" según el enunciado (la cota de la especificación
-        # dejaría afuera este caso)
         self.assertTrue(sol.iguales_consecutivos([1, 2, 9, 9, 9]))
  
     def test_tres_iguales_no_consecutivos(self):
@@ -257,7 +248,6 @@ class TestVocalesDistintas(unittest.TestCase):
         self.assertFalse(sol.vocales_distintas("pera"))
  
     def test_muchas_vocales_pero_solo_dos_distintas(self):
-        # Atrapa a quien cuenta vocales en vez de vocales distintas
         self.assertFalse(sol.vocales_distintas("aeaeaeae"))
  
     def test_tres_vocales_distintas(self):
@@ -286,7 +276,6 @@ class TestCantidadDigitosImpares(unittest.TestCase):
         self.assertEqual(sol.cantidad_digitos_impares([13579]), 5)
  
     def test_ceros_intermedios_y_finales(self):
-        # Atrapa a quien corta el ciclo cuando encuentra un 0
         self.assertEqual(sol.cantidad_digitos_impares([1001, 300]), 3)
  
     def test_un_digito(self):
