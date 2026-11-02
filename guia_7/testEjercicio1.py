@@ -25,7 +25,7 @@ class TestDivideATodos(unittest.TestCase):
     def test_divisor_negativo(self):
         self.assertTrue(sol.divide_a_todos([4, 8], -2))
         self.assertFalse(sol.divide_a_todos([4, 9], -2))
- 
+    
     def test_elementos_negativos(self):
         self.assertTrue(sol.divide_a_todos([-4, -8, 12], 4))
  
